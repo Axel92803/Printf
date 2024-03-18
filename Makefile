@@ -1,7 +1,12 @@
 NAME	= libftprintf.a
 
 SRCS	= ft_printf.c \
-	   	ft_printf_utils.c \
+		ft_putchar_pf.c \
+		ft_putstr_pf.c \
+		ft_putptr_pf.c \
+		ft_putnbr_pf.c \
+		ft_putnbr_un_pf.c \
+		ft_put_hex_pf.c \
 
 OFILES	= $(SRCS:.c=.o)
 

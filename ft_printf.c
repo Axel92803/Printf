@@ -13,9 +13,10 @@ int parse_format(char flag, va_list ap)
         count = ft_putptr_pf(va_arg(ap, unsigned long long));
     else if (flag == 'd' || flag == 'i')
         count = ft_putnbr_pf(va_arg(ap, int));
-    /*else if (flag == 'u')
-    else if (flag == 'x')
-    else if (flag == 'X')*/
+    else if (flag == 'u')
+        count = ft_putnbr_un_pf(va_arg(ap, unsigned int));
+    else if (flag == 'x' || flag == 'X')
+        count = ft_put_hex_pf(va_arg(ap, unsigned int), flag);
     else if (flag == '%')
         count += write(1, "%", 1);
     else

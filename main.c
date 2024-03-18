@@ -3,7 +3,7 @@
 
 int main(void)
 {
-    int a = -1;
+    int a = 0;
     int *aa = &a;
     /*long m = -2147483648;
     long mx = 2147483647;
@@ -13,5 +13,5 @@ int main(void)
 
     ft_printf(" %p ", aa);
     write(1, "\n", 1);
-    printf(" %p ", aa);
+    printf(" %p %p ", aa, aa);
 }

@@ -13,5 +13,6 @@ int ft_putstr_pf(char *str);
 int ft_putptr_pf(unsigned long long ptr);
 int ft_putnbr_pf(int n);
 int	ft_putnbr_un_pf(unsigned int u);
+int ft_put_hex_pf(unsigned int num, const char format);
 
 #endif
