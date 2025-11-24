@@ -32,9 +32,9 @@ int	ft_putptr_pf(unsigned long long ptr)
 {
 	int	len;
 
-	len = write(1, "0x", 2);
 	if (ptr == 0)
-		return (len + ft_putchar_pf('0'));
+		return (write(1, "(nil)", 5));
+	len = write(1, "0x", 2);
 	ft_put_ptr(ptr);
 	while (ptr > 0)
 	{
