@@ -6,7 +6,7 @@
 /*   By: itanvuia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 11:41:34 by itanvuia          #+#    #+#             */
-/*   Updated: 2025/11/24 11:41:36 by itanvuia         ###   ########.fr       */
+/*   Updated: 2025/11/24 16:25:03 by itanvuia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-int	ft_printf(const char *format, ...);
-int	ft_putchar_pf(int c);
-int	ft_putstr_pf(char *str);
-int	ft_putptr_pf(unsigned long long ptr);
-int	ft_putnbr_pf(int n);
-int	ft_putnbr_un_pf(unsigned int u);
-int	ft_put_hex_pf(unsigned int num, const char format);
+int		ft_printf(const char *format, ...);
+int		ft_putchar_pf(int c);
+int		ft_putstr_pf(char *str);
+int		ft_putptr_pf(unsigned long long ptr);
+int		ft_putnbr_pf(int n);
+int		ft_putnbr_un_pf(unsigned int u);
+int		ft_put_hex_pf(unsigned int num, const char format);
 void	ft_putstr_fd(char *s, int fd);
 
 #endif
