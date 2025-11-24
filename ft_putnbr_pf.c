@@ -12,41 +12,32 @@
 
 #include "ft_printf.h"
 
-static int	ft_numlen(int n)
+static void	ft_putnbr_rec(int n)
 {
-	int	len;
-
-	len = 0;
-	if (n <= 0)
-		len = 1;
-	while (n != 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
+	if (n > 9)
+		ft_putnbr_rec(n / 10);
+	ft_putchar_pf(n % 10 + '0');
 }
 
 int	ft_putnbr_pf(int n)
 {
 	int	len;
 
-	len = ft_numlen(n);
+	len = 0;
 	if (n == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return (11);
-	}
+		return (write(1, "-2147483648", 11));
 	if (n < 0)
 	{
-		ft_putchar_pf('-');
-		ft_putnbr_pf(n * -1);
+		len += ft_putchar_pf('-');
+		n = -n;
 	}
-	else
+	if (n == 0)
+		return (len + ft_putchar_pf('0'));
+	ft_putnbr_rec(n);
+	while (n > 0)
 	{
-		if (n > 9)
-			ft_putnbr_pf(n / 10);
-		ft_putchar_pf(n % 10 + '0');
+		len++;
+		n /= 10;
 	}
 	return (len);
 }

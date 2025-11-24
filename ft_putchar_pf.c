@@ -14,5 +14,8 @@
 
 int	ft_putchar_pf(int c)
 {
-	return (write(1, &c, 1));
+	unsigned char	uc;
+
+	uc = c;
+	return (write(1, &uc, 1));
 }

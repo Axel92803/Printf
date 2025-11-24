@@ -1,36 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_un_pf.c                                  :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itanvuia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 11:42:53 by itanvuia          #+#    #+#             */
-/*   Updated: 2025/11/24 11:42:57 by itanvuia         ###   ########.fr       */
+/*   Created: 2025/10/25 13:50:09 by itanvuia          #+#    #+#             */
+/*   Updated: 2025/10/25 13:50:09 by itanvuia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	ft_putnbr_un_rec(unsigned int n)
+void	ft_putstr_fd(char *s, int fd)
 {
-	if (n >= 10)
-		ft_putnbr_un_rec(n / 10);
-	ft_putchar_pf(n % 10 + '0');
-}
-
-int	ft_putnbr_un_pf(unsigned int u)
-{
-	int	len;
-
-	if (u == 0)
-		return (ft_putchar_pf('0'));
-	ft_putnbr_un_rec(u);
-	len = 0;
-	while (u > 0)
+	if (!s)
+		return ;
+	while (*s)
 	{
-		len++;
-		u /= 10;
+		write(fd, s, 1);
+		s++;
 	}
-	return (len);
 }

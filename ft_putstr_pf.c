@@ -12,18 +12,19 @@
 
 #include "ft_printf.h"
 
+static int	ft_strlen_pf(char *str)
+{
+	int	len;
+
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
+}
+
 int	ft_putstr_pf(char *str)
 {
-	int	count;
-
-	count = 0;
 	if (!str)
-		str = "(null)";
-	while (*str != '\0')
-	{
-		ft_putchar_pf(*str);
-		count++;
-		str++;
-	}
-	return (count);
+		return (write(1, "(null)", 6));
+	return (write(1, str, ft_strlen_pf(str)));
 }

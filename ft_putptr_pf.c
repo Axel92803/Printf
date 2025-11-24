@@ -12,19 +12,6 @@
 
 #include "ft_printf.h"
 
-static int	ft_ptr_len(unsigned long long num)
-{
-	int	count;
-
-	count = 0;
-	while (num != 0)
-	{
-		num /= 16;
-		count++;
-	}
-	return (count);
-}
-
 static void	ft_put_ptr(unsigned long long num)
 {
 	if (num >= 16)
@@ -43,22 +30,16 @@ static void	ft_put_ptr(unsigned long long num)
 
 int	ft_putptr_pf(unsigned long long ptr)
 {
-	int	count;
-	int	temp;
+	int	len;
 
-	count = 0;
-	temp = ft_putstr_pf("0x");
-	if (temp < 0)
-		return (-1);
-	else
-		count += temp;
+	len = write(1, "0x", 2);
 	if (ptr == 0)
+		return (len + ft_putchar_pf('0'));
+	ft_put_ptr(ptr);
+	while (ptr > 0)
 	{
-		if (ft_putchar_pf('0') < 0)
-			return (-1);
-		count++;
+		len++;
+		ptr /= 16;
 	}
-	else
-		ft_put_ptr(ptr);
-	return (count + ft_ptr_len(ptr));
+	return (len);
 }

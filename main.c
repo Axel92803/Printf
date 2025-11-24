@@ -3,6 +3,6 @@
 
 int main(void)
 {
-	char aa = 'A';
-	ft_printf(" %c ", aa);
+	char *aa = "AAAAA";
+	ft_printf("%s\n ", aa);
 }

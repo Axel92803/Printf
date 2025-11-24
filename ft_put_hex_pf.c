@@ -36,13 +36,10 @@ static void	ft_hex(unsigned int num, const char format)
 	{
 		if (num <= 9)
 			ft_putchar_pf(num + '0');
+		else if (format == 'x')
+			ft_putchar_pf(num - 10 + 'a');
 		else
-		{
-			if (format == 'x')
-				ft_putchar_pf(num - 10 + 'a');
-			if (format == 'X')
-				ft_putchar_pf(num - 10 + 'A');
-		}
+			ft_putchar_pf(num - 10 + 'A');
 	}
 }
 

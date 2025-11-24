@@ -7,6 +7,7 @@ SRCS	= ft_printf.c \
 		ft_putnbr_pf.c \
 		ft_putnbr_un_pf.c \
 		ft_put_hex_pf.c \
+		ft_putstr_fd.c \
 
 OFILES	= $(SRCS:.c=.o)
 
