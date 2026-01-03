@@ -48,15 +48,17 @@ ft_printf is a 42 School project that challenges students to recreate the versat
 ```
 ft_printf/
 ├── ft_printf.c          # Main function and format string parser
-├── ft_printf_utils.c    # Helper functions for string building
-├── ft_print_char.c      # Handle %c and %%
-├── ft_print_string.c    # Handle %s with NULL protection
-├── ft_print_pointer.c   # Handle %p (pointer to hex)
-├── ft_print_number.c    # Handle %d, %i, %u
-├── ft_print_hex.c       # Handle %x, %X
-├── ft_printf.h          # Header file
+├── ft_printf.h          # Header file with function prototypes
+├── ft_putchar_pf.c      # Character output (%c, %%)
+├── ft_putstr_pf.c       # String output (%s)
+├── ft_putnbr_pf.c       # Signed integer output (%d, %i)
+├── ft_putnbr_un_pf.c    # Unsigned integer output (%u)
+├── ft_put_hex_pf.c      # Hexadecimal output (%x, %X)
+├── ft_putptr_pf.c       # Pointer address output (%p)
+├── ft_putstr_fd.c       # Helper: string output to file descriptor
 ├── Makefile             # Compilation rules
-└── README.md            # This file
+├── test.c               # Test file 1
+└── README.md            # Documentation
 ```
 
 ## 📊 Complexity & Scale
@@ -157,15 +159,11 @@ ft_printf("%x %X\n", 255, 255);    // Output: ff FF
    - Converting memory addresses to hexadecimal representation
    - Handling different architectures (32-bit vs 64-bit)
 
-3. **Flag Combination Logic**
-   - Parsing and prioritizing multiple flags (-, 0, #, etc.)
-   - Ensuring flags interact correctly (e.g., `-` overrides `0`)
-
-4. **NULL Protection**
+3. **NULL Protection**
    - Gracefully handling NULL pointers in %s and %p
    - Matching original printf behavior exactly
 
-5. **Return Value Accuracy**
+4. **Return Value Accuracy**
    - Counting characters printed across all format specifiers
    - Maintaining count through nested function calls
 
@@ -224,6 +222,6 @@ This is a completed school project, but feedback and suggestions are always welc
 **School:** 42 London  
 **Project Completed:** [October 2025]
 
-[![42 Profile](https://img.shields.io/badge/42_Profile-atanvuia-000000?style=flat-square&logo=42)](https://profile.intra.42.fr/)
+[![42 Profile](https://img.shields.io/badge/42_Profile-itanvuia-000000?style=flat-square&logo=42)](https://profile.intra.42.fr/)
 
 *Part of my journey through 42 School's peer-learning curriculum. Check out my other projects on my [GitHub profile](https://github.com/Axel92803)!*
