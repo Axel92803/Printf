@@ -1,3 +1,5 @@
+*This project has been created as part of the 42 curriculum by itanvuia*
+
 # ft_printf
 
 ![42 School](https://img.shields.io/badge/42-000000?style=for-the-badge&logo=42&logoColor=white)
